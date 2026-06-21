@@ -1,0 +1,72 @@
+# ===========================================
+# HairCut API Server - 配置文件
+# ===========================================
+
+app:
+  env: development  # development | staging | production
+  name: "HairCut API Server"
+  version: "1.0.0"
+  log_level: info   # debug | info | warn | error
+  log_path: "./logs/app.log"
+
+server:
+  port: 8080
+  mode: debug       # debug | release | test
+  read_timeout: 15  # 秒
+  write_timeout: 15 # 秒
+  jwt_secret: "${JWT_SECRET:dev-secret-key-change-in-production}"
+  jwt_expire: 24    # 小时
+
+mysql:
+  host: "${MYSQL_HOST:localhost}"
+  port: ${MYSQL_PORT:3306}
+  user: "${MYSQL_USER:haircut_user}"
+  password: "${MYSQL_PASSWORD:haircut_dev_2024}"
+  db_name: "${MYSQL_DB:haircut}"
+  max_idle_conns: 10
+  max_open_conns: 100
+  log_level: info   # silent | error | warn | info
+
+redis:
+  host: "${REDIS_HOST:localhost}"
+  port: ${REDIS_PORT:6379}
+  password: "${REDIS_PASSWORD:}"
+  db: 0
+  pool_size: 25
+
+elasticsearch:
+  urls:
+    - "${ES_URL:http://localhost:9200}"
+
+mongodb:
+  uri: "${MONGO_URI:mongodb://admin:mongo_admin_2024@localhost:27017}"
+  database: haircut_logs
+
+rabbitmq:
+  host: "${RABBITMQ_HOST:localhost}"
+  port: ${RABBITMQ_PORT:5672}
+  user: "${RABBITMQ_USER:haircut}"
+  password: "${RABBITMQ_PASSWORD:rabbitmq_2024}"
+  vhost: /haircut
+
+minio:
+  endpoint: "${MINIO_ENDPOINT:minio:9000}"  # Docker内部使用服务名
+  access_key_id: "${MINIO_ACCESS_KEY:minioadmin}"
+  secret_key_id: "${MINIO_SECRET_KEY:minioadmin_2024}"
+  use_ssl: false
+  bucket_name: haircut-uploads
+
+wechat:
+  app_id: "${WECHAT_APP_ID:}"
+  app_secret: "${WECHAT_APP_SECRET:}"
+
+wechat_pay:
+  mch_id: "${WECHAT_PAY_MCH_ID:}"
+  api_key: "${WECHAT_PAY_API_KEY:}"
+  cert_path: "./certs/wechat/apiclient_cert.pem"
+  key_path: "./certs/wechat/apiclient_key.pem"
+  notify_url: "${WECHAT_PAY_NOTIFY_URL:https://api.yourdomain.com/api/v1/payment/wechat/notify}"
+  sandbox: false
+
+tencent_map:
+  sdk_key: "${TENCENT_MAP_SDK_KEY:}"

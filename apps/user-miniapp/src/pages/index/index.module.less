@@ -1,0 +1,355 @@
+.index-page {
+  background-color: #F7F8FA;
+  min-height: 100vh;
+  padding-bottom: 120rpx; // TabBar高度
+
+  /* ===== 顶部城市定位栏 ===== */
+  .header-bar {
+    display: flex;
+    align-items: center;
+    padding: 16rpx 24rpx;
+    background-color: #FFFFFF;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    .city-selector {
+      display: flex;
+      align-items: center;
+      margin-right: 20rpx;
+
+      .city-icon { font-size: 28rpx; }
+      .city-name {
+        font-size: 28rpx;
+        font-weight: 600;
+        color: #1A1A1A;
+        margin: 0 4rpx;
+      }
+      .arrow {
+        font-size: 20rpx;
+        color: #999999;
+      }
+    }
+
+    .search-bar {
+      flex: 1;
+      height: 64rpx;
+      background-color: #F3F4F6;
+      border-radius: 32rpx;
+      display: flex;
+      align-items: center;
+      padding: 0 28rpx;
+
+      .search-placeholder {
+        font-size: 26rpx;
+        color: #9CA3AF;
+      }
+    }
+  }
+
+  /* ===== Banner轮播图 ===== */
+  .banner-swiper {
+    height: 320rpx;
+    margin: 16rpx 24rpx;
+    border-radius: 20rpx;
+    overflow: hidden;
+
+    .banner-image {
+      width: 100%;
+      height: 100%;
+      border-radius: 20rpx;
+    }
+  }
+
+  /* ===== 快捷入口8宫格 ===== */
+  .quick-entries {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20rpx;
+    padding: 32rpx 24rpx;
+    background-color: #FFFFFF;
+    margin: 16rpx 24rpx;
+    border-radius: 20rpx;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+
+    .entry-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .entry-icon {
+        width: 88rpx;
+        height: 88rpx;
+        background: linear-gradient(135deg, #FBF7F0, #F5EDE0);
+        border-radius: 24rpx;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 40rpx;
+        margin-bottom: 12rpx;
+        transition: transform 0.2s ease;
+
+        &:active {
+          transform: scale(0.95);
+        }
+      }
+
+      .entry-label {
+        font-size: 24rpx;
+        color: #374151;
+        font-weight: 500;
+      }
+    }
+  }
+
+  /* ===== 通用Section样式 ===== */
+  .section {
+    margin-bottom: 24rpx;
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24rpx;
+
+      .section-title {
+        font-size: 34rpx;
+        font-weight: 700;
+        color: #1A1A1A;
+      }
+
+      .more-link {
+        font-size: 26rpx;
+        color: #9CA3AF;
+      }
+    }
+  }
+
+  /* ===== 推荐门店横向滑动 ===== */
+  .store-scroll {
+    white-space: nowrap;
+    padding-left: 24rpx;
+  }
+
+  .store-list-horizontal {
+    display: inline-flex;
+    gap: 20rpx;
+    padding-right: 24rpx;
+  }
+
+  .store-card {
+    width: 280rpx;
+    background-color: #FFFFFF;
+    border-radius: 20rpx;
+    padding: 20rpx;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    position: relative;
+
+    .store-logo {
+      width: 240rpx;
+      height: 240rpx;
+      border-radius: 16rpx;
+      margin-bottom: 16rpx;
+    }
+
+    .store-name {
+      font-size: 28rpx;
+      font-weight: 600;
+      color: #1A1A1A;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .store-info {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 8rpx;
+
+      .distance { font-size: 24rpx; color: #6B7280; }
+      .rating {
+        font-size: 24rpx;
+        color: #C8A882;
+        font-weight: 600;
+      }
+    }
+
+    .tags {
+      display: flex;
+      gap: 8rpx;
+      margin-top: 12rpx;
+      flex-wrap: wrap;
+
+      .tag {
+        font-size: 20rpx;
+        color: #C8A882;
+        background-color: #FBF7F0;
+        padding: 4rpx 12rpx;
+        border-radius: 6rpx;
+      }
+    }
+
+    .status-badge {
+      position: absolute;
+      top: 12rpx;
+      right: 12rpx;
+      padding: 4rpx 12rpx;
+      border-radius: 8rpx;
+      font-size: 20rpx;
+      font-weight: 500;
+
+      &.open {
+        background-color: #D1FAE5;
+        color: #059669;
+      }
+
+      &.closed {
+        background-color: #FEE2E2;
+        color: #DC2626;
+      }
+    }
+  }
+
+  /* ===== 明星理发师 ===== */
+  .stylist-scroll {
+    white-space: nowrap;
+    padding-left: 24rpx;
+  }
+
+  .stylist-list-horizontal {
+    display: inline-flex;
+    gap: 24rpx;
+    padding-right: 24rpx;
+  }
+
+  .stylist-card {
+    width: 240rpx;
+    background-color: #FFFFFF;
+    border-radius: 20rpx;
+    padding: 28rpx 20rpx;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+
+    .avatar-circle {
+      width: 120rpx;
+      height: 120rpx;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #C8A882, #B8956A);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16rpx;
+
+      .avatar-text {
+        font-size: 44rpx;
+        color: #FFFFFF;
+        font-weight: 700;
+      }
+    }
+
+    .stylist-name {
+      font-size: 28rpx;
+      font-weight: 600;
+      color: #1A1A1A;
+      margin-bottom: 4rpx;
+    }
+
+    .stylist-title {
+      font-size: 22rpx;
+      color: #C8A882;
+      margin-bottom: 8rpx;
+    }
+
+    .stylist-stats {
+      font-size: 22rpx;
+      color: #6B7280;
+      margin-bottom: 8rpx;
+    }
+
+    .fan-count {
+      font-size: 22rpx;
+      color: #9CA3AF;
+      margin-bottom: 16rpx;
+    }
+
+    .book-btn {
+      display: inline-block;
+      background-color: #C8A882;
+      color: #FFFFFF;
+      font-size: 24rpx;
+      font-weight: 500;
+      padding: 10rpx 36rpx;
+      border-radius: 24rpx;
+
+      &:active {
+        opacity: 0.85;
+      }
+    }
+  }
+
+  /* ===== 热门套餐瀑布流 ===== */
+  .packages-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16rpx;
+    padding: 0 24rpx 24rpx;
+  }
+
+  .package-card {
+    background-color: #FFFFFF;
+    border-radius: 20rpx;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+
+    .package-cover {
+      width: 100%;
+      height: 280rpx;
+    }
+
+    .package-info {
+      padding: 20rpx;
+
+      .package-name {
+        font-size: 28rpx;
+        font-weight: 600;
+        color: #1A1A1A;
+        margin-bottom: 12rpx;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .package-price-row {
+        display: flex;
+        align-items: baseline;
+        margin-bottom: 8rpx;
+
+        .price-symbol {
+          font-size: 24rpx;
+          color: #E85D5D;
+          font-weight: 600;
+        }
+
+        .price-value {
+          font-size: 40rpx;
+          color: #E85D5D;
+          font-weight: 700;
+          line-height: 1;
+        }
+
+        .original-price {
+          font-size: 24rpx;
+          color: #9CA3AF;
+          text-decoration: line-through;
+          margin-left: 8rpx;
+        }
+      }
+
+      .sold-count {
+        font-size: 22rpx;
+        color: #9CA3AF;
+      }
+    }
+  }
+}
